@@ -18,3 +18,14 @@
 5 10 15 20 25 30
 6 12 18 24 30 36 """
 
+rows = int(input('Введите количество строк: '))
+columns = int(input('Введите количество столбцов: '))
+
+def print_operation_table(operation, num_rows, num_columns):
+    for i in range(1, num_rows +1):
+        arr = []
+        for j in range(1, num_columns +1):
+            arr.append(str(operation(i, j)))
+        print(' '.join(arr))
+
+print_operation_table(lambda x, y: x * y, rows, columns)
